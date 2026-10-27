@@ -1,0 +1,30 @@
+---
+title: "penguin_analysis_demo"
+author: "Aanya Shridhar"
+format: html
+---
+
+Just a demo!
+
+```{r}
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+penguins |> 
+  group_by(species) |>
+  count()
+```
+
+```{r}
+penguins |>
+  ggplot(mapping = aes(x = species, y = body_mass_g), fill = species) +
+  geom_boxplot() +
+  labs(
+    title = "Penguin Body Mass by Spcecies", 
+    x = "Species",
+    y = "Body Mass (g)"
+  )
+```
